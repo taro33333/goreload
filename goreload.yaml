@@ -9,11 +9,11 @@ tmp_dir: tmp
 # Build settings
 build:
   # Build command
-  cmd: go build -o ./tmp/main .
+  cmd: go build -o ./tmp/main ./cmd/goreload
   # Binary to execute
   bin: ./tmp/main
   # Arguments to pass to the binary
-  args: []
+  args: ["version"]
   # Delay before building after file change (debounce)
   delay: 200ms
   # Grace period for process termination
@@ -35,7 +35,6 @@ watch:
     - node_modules
   # Files to exclude (glob patterns)
   exclude_files:
-    - '*_test.go'
 
 # Logging settings
 log:
