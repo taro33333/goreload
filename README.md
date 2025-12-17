@@ -4,6 +4,8 @@
 [![Release](https://github.com/taro33333/goreload/actions/workflows/release.yaml/badge.svg)](https://github.com/taro33333/goreload/actions/workflows/release.yaml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/taro33333/goreload)](https://goreportcard.com/report/github.com/taro33333/goreload)
 
+[English](README.md) | [日本語](README_ja.md)
+
 A hot reload tool for Go applications. Watches your source files and automatically rebuilds and restarts your application when changes are detected.
 
 ## Features
