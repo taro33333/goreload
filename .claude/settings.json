@@ -7,7 +7,7 @@
       "Bash(go mod:*)",
       "Bash(go vet:*)",
       "Bash(go fmt:*)",
-      "Bash(golangci-lint:*)",
+      "Bash(staticcheck:*)",
       "Bash(git:*)",
       "Bash(make:*)",
       "Bash(./tmp/goreload:*)"

@@ -1,6 +1,6 @@
 ---
 description: Run static analysis and linting
-allowed-tools: Bash(go vet:*), Bash(golangci-lint:*)
+allowed-tools: Bash(go vet:*), Bash(staticcheck:*)
 ---
 
 Run static analysis on the codebase:
@@ -11,10 +11,10 @@ Run static analysis on the codebase:
 go vet ./...
 ```
 
-2. Run golangci-lint (if available):
+2. Run staticcheck:
 
 ```bash
-golangci-lint run ./...
+staticcheck ./...
 ```
 
 Report any issues found and suggest fixes.
