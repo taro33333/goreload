@@ -229,8 +229,8 @@ func TestBuilder_Build(t *testing.T) {
 
 ```bash
 # タグを作成してプッシュ
-git tag v0.1.0
-git push origin v0.1.0
+git tag v0.1.2
+git push origin v0.1.2
 ```
 
 ### 自動リリース
