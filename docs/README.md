@@ -1,5 +1,7 @@
 # goreload Documentation
 
+[English](README.md) | [日本語](README_ja.md)
+
 ## Table of Contents
 
 - [Getting Started](./getting-started.md) - Installation and quick start guide
