@@ -297,17 +297,20 @@ dlv debug ./cmd/goreload -- -c goreload.yaml
 ### Common Issues
 
 **Build fails with module error:**
+
 ```bash
 go mod tidy
 ```
 
 **Tests fail with permission error:**
+
 ```bash
 # Check file permissions in test temp dirs
 chmod +x ./tmp/test-binary
 ```
 
 **Watcher not detecting changes:**
+
 - Check `watch.dirs` includes the directory
 - Check `watch.exclude_dirs` doesn't exclude it
 - Check file extension is in `watch.extensions`
