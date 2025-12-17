@@ -29,7 +29,12 @@ builds:
 
 archives:
   - id: default
-    format: tar.gz
+    formats:
+      - tar.gz
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
     name_template: >-
       {{ .ProjectName }}_
       {{- .Version }}_
@@ -37,9 +42,6 @@ archives:
       {{- if eq .Arch "amd64" }}x86_64
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
-    format_overrides:
-      - goos: windows
-        format: zip
     files:
       - README.md
       - LICENSE*
@@ -62,20 +64,17 @@ changelog:
       - Merge pull request
       - Merge branch
 
-brews:
+# Homebrew Casks (replaces deprecated brews)
+# https://goreleaser.com/customization/homebrew_casks/
+homebrew_casks:
   - name: goreload
     repository:
       owner: taro33333
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
-    directory: Formula
     homepage: "https://github.com/taro33333/goreload"
     description: "Hot reload tool for Go applications"
     license: "MIT"
-    install: |
-      bin.install "goreload"
-    test: |
-      system "#{bin}/goreload", "version"
 
 release:
   github:

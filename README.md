@@ -21,7 +21,8 @@ A hot reload tool for Go applications. Watches your source files and automatical
 ### Homebrew (macOS/Linux)
 
 ```bash
-brew install taro33333/tap/goreload
+brew tap taro33333/tap
+brew install --cask goreload
 ```
 
 ### Go Install
