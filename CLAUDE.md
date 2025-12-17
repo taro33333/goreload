@@ -64,9 +64,7 @@ go test ./... -cover
 
 # 静的解析
 go vet ./...
-
-# リント（golangci-lint インストール済みの場合）
-golangci-lint run ./...
+staticcheck ./...
 
 # goreload 実行
 ./tmp/goreload
