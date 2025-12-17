@@ -1,5 +1,9 @@
 # goreload
 
+[![CI](https://github.com/taro33333/goreload/actions/workflows/ci.yaml/badge.svg)](https://github.com/taro33333/goreload/actions/workflows/ci.yaml)
+[![Release](https://github.com/taro33333/goreload/actions/workflows/release.yaml/badge.svg)](https://github.com/taro33333/goreload/actions/workflows/release.yaml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/taro33333/goreload)](https://goreportcard.com/report/github.com/taro33333/goreload)
+
 A hot reload tool for Go applications. Watches your source files and automatically rebuilds and restarts your application when changes are detected.
 
 ## Features
@@ -10,28 +14,43 @@ A hot reload tool for Go applications. Watches your source files and automatical
 - Colored log output
 - Glob pattern support for file exclusion
 - Recursive directory watching
+- Cross-platform support (Linux, macOS, Windows)
 
 ## Installation
 
+### Homebrew (macOS/Linux)
+
 ```bash
-go install github.com/user/goreload/cmd/goreload@latest
+brew install taro33333/tap/goreload
 ```
 
-Or build from source:
+### Go Install
 
 ```bash
-git clone https://github.com/user/goreload.git
+go install github.com/taro33333/goreload/cmd/goreload@latest
+```
+
+### Download Binary
+
+Download the latest release from [GitHub Releases](https://github.com/taro33333/goreload/releases).
+
+### Build from Source
+
+```bash
+git clone https://github.com/taro33333/goreload.git
 cd goreload
 go build -o goreload ./cmd/goreload
 ```
 
 ## Usage
 
-### Basic Usage
-
-Run in a directory containing a `goreload.yaml` configuration file:
+### Quick Start
 
 ```bash
+# Initialize configuration file
+goreload init
+
+# Run with default configuration
 goreload
 ```
 
@@ -39,12 +58,6 @@ goreload
 
 ```bash
 goreload -c ./config.yaml
-```
-
-### Generate Default Configuration
-
-```bash
-goreload init
 ```
 
 ### Show Version
@@ -148,6 +161,10 @@ goreload/
 - [yaml.v3](https://gopkg.in/yaml.v3) - YAML parsing
 - [cobra](https://github.com/spf13/cobra) - CLI framework
 - [color](https://github.com/fatih/color) - Colored terminal output
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 

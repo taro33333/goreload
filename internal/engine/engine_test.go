@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/user/goreload/internal/config"
-	"github.com/user/goreload/internal/logger"
+	"github.com/taro33333/goreload/internal/config"
+	"github.com/taro33333/goreload/internal/logger"
 )
 
 func TestNew(t *testing.T) {

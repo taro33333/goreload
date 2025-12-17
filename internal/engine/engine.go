@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/user/goreload/internal/builder"
-	"github.com/user/goreload/internal/config"
-	"github.com/user/goreload/internal/logger"
-	"github.com/user/goreload/internal/runner"
-	"github.com/user/goreload/internal/watcher"
+	"github.com/taro33333/goreload/internal/builder"
+	"github.com/taro33333/goreload/internal/config"
+	"github.com/taro33333/goreload/internal/logger"
+	"github.com/taro33333/goreload/internal/runner"
+	"github.com/taro33333/goreload/internal/watcher"
 )
 
 // Engine orchestrates the watch-build-run cycle.

@@ -1,4 +1,4 @@
-module github.com/user/goreload
+module github.com/taro33333/goreload
 
 go 1.23
 

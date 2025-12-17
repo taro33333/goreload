@@ -10,13 +10,17 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/user/goreload/internal/config"
-	"github.com/user/goreload/internal/engine"
-	"github.com/user/goreload/internal/logger"
+	"github.com/taro33333/goreload/internal/config"
+	"github.com/taro33333/goreload/internal/engine"
+	"github.com/taro33333/goreload/internal/logger"
 )
 
-// Version is set at build time.
-var Version = "v0.1.0"
+// Build information set by ldflags.
+var (
+	Version = "dev"
+	Commit  = "none"
+	Date    = "unknown"
+)
 
 func main() {
 	if err := rootCmd().Execute(); err != nil {
@@ -52,6 +56,8 @@ func versionCmd() *cobra.Command {
 		Short: "Print version information",
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Printf("goreload %s\n", Version)
+			fmt.Printf("  commit: %s\n", Commit)
+			fmt.Printf("  built:  %s\n", Date)
 		},
 	}
 }
