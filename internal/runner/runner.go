@@ -9,7 +9,6 @@ import (
 	"os/exec"
 	"path/filepath"
 	"sync"
-	"syscall"
 	"time"
 )
 
@@ -77,8 +76,7 @@ func (r *runner) Start(ctx context.Context) error {
 	r.cmd.Stdout = r.cfg.Stdout
 	r.cmd.Stderr = r.cfg.Stderr
 
-	// Set process group so we can kill all child processes.
-	r.cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+	prepareCommand(r.cmd)
 
 	if err := r.cmd.Start(); err != nil {
 		return fmt.Errorf("start process: %w", err)
@@ -113,17 +111,11 @@ func (r *runner) Stop(ctx context.Context) error {
 	}
 
 	done := r.done
-	pid := r.cmd.Process.Pid
+	proc := r.cmd.Process
 	r.mu.Unlock()
 
-	// First try graceful shutdown with SIGINT to process group.
-	if err := syscall.Kill(-pid, syscall.SIGINT); err != nil {
-		// Process might already be dead.
-		if err != syscall.ESRCH {
-			// Try SIGINT to single process.
-			_ = syscall.Kill(pid, syscall.SIGINT)
-		}
-	}
+	// First try graceful shutdown.
+	_ = interruptProcess(proc)
 
 	// Wait for graceful shutdown or timeout.
 	killDelay := r.cfg.KillDelay
@@ -136,12 +128,10 @@ func (r *runner) Stop(ctx context.Context) error {
 		return nil
 	case <-time.After(killDelay):
 		// Force kill.
-		_ = syscall.Kill(-pid, syscall.SIGKILL)
-		_ = syscall.Kill(pid, syscall.SIGKILL)
+		_ = killProcess(proc)
 	case <-ctx.Done():
 		// Force kill on context cancellation.
-		_ = syscall.Kill(-pid, syscall.SIGKILL)
-		_ = syscall.Kill(pid, syscall.SIGKILL)
+		_ = killProcess(proc)
 		return ctx.Err()
 	}
 
