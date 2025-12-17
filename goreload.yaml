@@ -1,0 +1,47 @@
+# goreload configuration file
+
+# Project root directory
+root: .
+
+# Temporary directory for build artifacts
+tmp_dir: tmp
+
+# Build settings
+build:
+  # Build command
+  cmd: go build -o ./tmp/main .
+  # Binary to execute
+  bin: ./tmp/main
+  # Arguments to pass to the binary
+  args: []
+  # Delay before building after file change (debounce)
+  delay: 200ms
+  # Grace period for process termination
+  kill_delay: 500ms
+
+# File watching settings
+watch:
+  # File extensions to watch
+  extensions:
+    - .go
+  # Directories to watch
+  dirs:
+    - .
+  # Directories to exclude
+  exclude_dirs:
+    - tmp
+    - vendor
+    - .git
+    - node_modules
+  # Files to exclude (glob patterns)
+  exclude_files:
+    - '*_test.go'
+
+# Logging settings
+log:
+  # Enable colored output
+  color: true
+  # Show timestamps
+  time: true
+  # Log level: debug, info, warn, error
+  level: info

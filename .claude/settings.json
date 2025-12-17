@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go build:*)",
+      "Bash(go test:*)",
+      "Bash(go run:*)",
+      "Bash(go mod:*)",
+      "Bash(go vet:*)",
+      "Bash(go fmt:*)",
+      "Bash(golangci-lint:*)",
+      "Bash(git:*)",
+      "Bash(make:*)",
+      "Bash(./tmp/goreload:*)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(./secrets/**)",
+      "Read(.claude/settings.local.json)"
+    ]
+  },
+  "env": {
+    "GO111MODULE": "on",
+    "CGO_ENABLED": "0"
+  }
+}
