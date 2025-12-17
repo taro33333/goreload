@@ -1,5 +1,7 @@
 # CLI Reference
 
+[English](cli.md) | [日本語](cli_ja.md)
+
 ## Synopsis
 
 ```
@@ -177,6 +179,7 @@ goreload handles the following signals:
 ```
 
 Example:
+
 ```
 15:04:05 [INFO] watching: /path/to/project
 15:04:05 [INFO] excluding: [tmp vendor .git]

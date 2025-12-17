@@ -1,5 +1,7 @@
 # Architecture
 
+[English](architecture.md) | [日本語](architecture_ja.md)
+
 ## Overview
 
 goreload follows a modular architecture with clear separation of concerns. Each component has a single responsibility and communicates through well-defined interfaces.

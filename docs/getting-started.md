@@ -1,5 +1,7 @@
 # Getting Started
 
+[English](getting-started.md) | [日本語](getting-started_ja.md)
+
 ## Installation
 
 ### Homebrew (macOS/Linux)

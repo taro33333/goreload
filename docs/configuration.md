@@ -1,5 +1,7 @@
 # Configuration Reference
 
+[English](configuration.md) | [日本語](configuration_ja.md)
+
 goreload uses a YAML configuration file (default: `goreload.yaml`) to control its behavior.
 
 ## Configuration File Location
@@ -69,6 +71,7 @@ log:
 #### Duration Format
 
 Duration values support Go's duration format:
+
 - `"100ms"` - 100 milliseconds
 - `"1s"` - 1 second
 - `"1m30s"` - 1 minute 30 seconds
@@ -106,6 +109,7 @@ build:
 #### Extension Format
 
 Extensions should include the leading dot:
+
 ```yaml
 watch:
   extensions:

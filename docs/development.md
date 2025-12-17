@@ -1,5 +1,7 @@
 # Development Guide
 
+[English](development.md) | [日本語](development_ja.md)
+
 ## Prerequisites
 
 - Go 1.21 or later
