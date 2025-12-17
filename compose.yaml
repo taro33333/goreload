@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    # Mount the current directory to /app in the container
+    volumes:
+      - .:/app
+    # Expose ports as needed
+    ports:
+      - "8000:8000"

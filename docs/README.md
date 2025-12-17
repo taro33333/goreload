@@ -7,6 +7,7 @@
 - [Getting Started](./getting-started.md) - Installation and quick start guide
 - [Configuration Reference](./configuration.md) - Complete configuration options
 - [CLI Reference](./cli.md) - Command-line interface documentation
+- [Docker Support](./docker.md) - Running goreload in Docker
 - [Architecture](./architecture.md) - Internal design and components
 - [Development Guide](./development.md) - Contributing and development setup
 
